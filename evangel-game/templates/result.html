@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Résultat 😄</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#0b0f1a;
+      color:#fff;
+      margin:0;
+    }
+
+    .wrap{
+      max-width:520px;
+      margin:60px auto;
+      padding:24px;
+    }
+
+    .card{
+      background:#121a2b;
+      border:1px solid #23304d;
+      border-radius:16px;
+      padding:24px;
+    }
+
+    img{
+      width:100%;
+      border-radius:14px;
+      border:1px solid #23304d;
+    }
+
+    .row{
+      display:flex;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    a.btn{
+      flex:1;
+      text-align:center;
+      padding:12px;
+      border-radius:12px;
+      text-decoration:none;
+      color:#fff;
+      background:#4f7cff;
+    }
+
+    a.btn2{
+      flex:1;
+      text-align:center;
+      padding:12px;
+      border-radius:12px;
+      text-decoration:none;
+      color:#fff;
+      background:#24324f;
+      border:1px solid #23304d;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <!-- Poster généré -->
+      <img src="{{ poster_url }}" alt="poster"/>
+
+      <div class="row">
+        <a class="btn2" href="/">Refaire 😄</a>
+        <a class="btn"
+           href="javascript:navigator.clipboard.writeText(window.location.href).then(()=>alert('Lien copié ✅'));">
+          Partager
+        </a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scan Statut — Gagneurs d’Âmes</title>
+
+  <style>
+    :root{
+      --bg:#070d1f;
+      --card:#0e1a3a;
+      --stroke:#22356a;
+      --text:#f5f8ff;
+      --muted:#c7d1ea;
+      --accent:#5ab4ff;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(600px 300px at 50% -10%, rgba(90,180,255,.25), transparent 60%),
+        linear-gradient(180deg, #050916, var(--bg));
+      padding:24px;
+    }
+
+    .card{
+      width:min(520px, 100%);
+      background: linear-gradient(180deg, rgba(14,26,58,.95), rgba(8,15,40,.95));
+      border:1px solid var(--stroke);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:0 30px 80px rgba(0,0,0,.55);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .glow{
+      position:absolute;
+      inset:-120px;
+      background: radial-gradient(circle at 50% 20%, rgba(90,180,255,.22), transparent 55%);
+      filter: blur(30px);
+      pointer-events:none;
+    }
+
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:18px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 18px;
+    }
+    .logo img{ width:100%; height:100%; object-fit:contain; padding:10px; }
+
+    h1{
+      margin:0;
+      text-align:center;
+      font-size:34px;
+      font-weight:900;
+      letter-spacing:.3px;
+    }
+
+    .sub{
+      text-align:center;
+      margin:10px 0 22px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    .drop{
+      border-radius:18px;
+      border:1px dashed rgba(255,255,255,.25);
+      background: rgba(0,0,0,.18);
+      padding:20px;
+      text-align:center;
+      margin-bottom:16px;
+    }
+
+    .drop .icon{
+      font-size:26px;
+      margin-bottom:6px;
+    }
+
+    input[type=file]{
+      width:100%;
+      color:var(--muted);
+    }
+
+    .btn{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:18px;
+      font-size:17px;
+      font-weight:900;
+      cursor:pointer;
+      color:#061021;
+      background: linear-gradient(90deg, #5ab4ff, #3dd6ff);
+      box-shadow:0 14px 36px rgba(90,180,255,.35);
+    }
+
+    .fine{
+      margin-top:14px;
+      text-align:center;
+      font-size:12px;
+      color:rgba(199,209,234,.9);
+    }
+
+    .badge{
+      position:absolute;
+      top:16px;
+      right:16px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(90,180,255,.14);
+      border:1px solid rgba(90,180,255,.25);
+      font-size:12px;
+      font-weight:700;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="glow"></div>
+
+
+    <div class="logo">
+      <img src="/static/logo.png" alt="ICC Logo" onerror="this.style.display='none'">
+    </div>
+
+    <h1>Scan ton statut</h1>
+    <div class="sub">
+      Un scan. Un message.<br>
+      <b>Une mission : Gagner des âmes.</b>
+    </div>
+
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+      <div class="drop">
+        <div class="icon">📸</div>
+        <div style="font-weight:700; margin-bottom:6px;">Ajoute ta photo</div>
+        <input type="file" name="photo" accept="image/*" required />
+      </div>
+
+      <button class="btn" type="submit">
+        Analyser mon statut 😄
+      </button>
+    </form>
+
+    <div class="fine">
+      Samedi • Centre Rideau • Évangélisation <br>
+      Partage ton flyer et motive les autres
+    </div>
+  </div>
+</body>
+</html>
