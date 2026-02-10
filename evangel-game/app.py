@@ -23,9 +23,7 @@ LOGO_PATH = os.path.join("static", "logo.png")
 
 
 
-# ----------------------------
-# Event / Church Info
-# ----------------------------
+
 CHURCH_NAME = "ICC Ottawa"
 EVENT_TITLE = "GAGNEURS D’ÂMES"
 TAGLINE = "Sortie d’évangélisation"
@@ -46,11 +44,19 @@ RESULTS = [
 # Fonts
 # ----------------------------
 def try_font(size: int, bold=False):
-    name = "arialbd.ttf" if bold else "arial.ttf"
+    here = os.path.dirname(os.path.abspath(__file__))
+    font_dir = os.path.join(here, "static", "fonts")
+    font_path = os.path.join(font_dir, "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf")
+
     try:
-        return ImageFont.truetype(name, size)
+        if os.path.exists(font_path):
+            return ImageFont.truetype(font_path, size)
     except:
-        return ImageFont.load_default()
+        pass
+
+    return ImageFont.load_default()
+
+
 
 def sanitize_for_poster(text: str) -> str:
     text = re.sub(r"[^\w\sÀ-ÿ’'-:,.!?]", "", text, flags=re.UNICODE)
