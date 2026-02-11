@@ -176,10 +176,14 @@ def generate_result_poster(photo_path: str, result_title: str, result_msg: str):
     # Event title (center)
     title_y = 190
     draw_centered(draw, EVENT_TITLE, y=title_y, font=f_title, fill=WHITE, W=W)
+    # Subtitle under title 
+    subtitle_font = try_font(40, bold=False)
+    draw_centered(draw, "Où seras-tu ce 14 février ?", y=title_y + 70, font=subtitle_font, fill=SOFT, W=W)
+
 
     # Divider
     div_y = title_y + 95
-    draw.rounded_rectangle((260, div_y, 820, div_y + 6), radius=3, fill=ACCENT)
+    #draw.rounded_rectangle((260, div_y, 820, div_y + 6), radius=3, fill=ACCENT)
 
     # Photo circle (center)
     CIRCLE = 470
