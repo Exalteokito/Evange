@@ -36,6 +36,7 @@
       display:flex;
       gap:12px;
       margin-top:16px;
+      flex-wrap:wrap;
     }
 
     a.btn{
@@ -70,9 +71,10 @@
 
       <div class="row">
         <a class="btn2" href="/">Refaire 😄</a>
-        <a class="btn"
-           href="javascript:navigator.clipboard.writeText(window.location.href).then(()=>alert('Lien copié ✅'));">
-          Partager
+
+        <!-- ✅ Download button (new) -->
+        <a class="btn2" href="{{ poster_url }}" download>
+          Télécharger
         </a>
       </div>
 
